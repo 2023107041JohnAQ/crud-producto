@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{layout}">
+
+<div layout:fragment="contenido">
+
+    <h1>Formulario Proveedor</h1>
+
+    <form th:action="@{/proveedores/guardar}"
+          th:object="${proveedor}"
+          method="post">
+
+        <input type="hidden" th:field="*{id}">
+
+        <label>RUC:</label>
+        <input type="text"
+               th:field="*{ruc}">
+        <br><br>
+
+        <label>Empresa:</label>
+        <input type="text"
+               th:field="*{nombreEmpresa}">
+        <br><br>
+
+        <label>Teléfono:</label>
+        <input type="text"
+               th:field="*{telefono}">
+        <br><br>
+
+        <label>Correo:</label>
+        <input type="email"
+               th:field="*{correo}">
+        <br><br>
+
+        <label>Dirección:</label>
+        <input type="text"
+               th:field="*{direccion}">
+        <br><br>
+
+        <button type="submit">
+            Guardar
+        </button>
+
+    </form>
+
+</div>
+
+</html>

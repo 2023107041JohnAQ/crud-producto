@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+<div th:fragment="menu">
+
+    <h2>Sistema Almacén</h2>
+
+    <hr>
+
+    <ul>
+
+        <li>
+            <a th:href="@{/}">
+                Inicio
+            </a>
+        </li>
+
+        <li>
+            <a th:href="@{/productos}">
+                Productos
+            </a>
+        </li>
+
+        <li>
+            <a th:href="@{/categorias}">
+                Categorías
+            </a>
+        </li>
+
+        <li>
+            <a th:href="@{/proveedores}">
+                Proveedores
+            </a>
+        </li>
+
+        <li>
+            <a th:href="@{/movimientos}">
+                Movimientos
+            </a>
+        </li>
+
+    </ul>
+
+</div>
+
+</body>
+</html>

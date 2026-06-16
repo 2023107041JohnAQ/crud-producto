@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{layout}">
+
+<div layout:fragment="contenido">
+
+    <h1>Lista de Categorías</h1>
+
+    <a th:href="@{/categorias/nuevo}">
+        Nueva Categoría
+    </a>
+
+    <br><br>
+
+    <table>
+
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Acciones</th>
+        </tr>
+        </thead>
+
+        <tbody>
+
+        <tr th:each="categoria : ${categorias}">
+
+            <td th:text="${categoria.id}"></td>
+            <td th:text="${categoria.nombre}"></td>
+            <td th:text="${categoria.descripcion}"></td>
+
+            <td>
+
+                <a th:href="@{/categorias/editar/{id}(id=${categoria.id})}">
+                    Editar
+                </a>
+
+                |
+
+                <a th:href="@{/categorias/eliminar/{id}(id=${categoria.id})}"
+                   onclick="return confirm('¿Eliminar categoría?')">
+                    Eliminar
+                </a>
+
+            </td>
+
+        </tr>
+
+        </tbody>
+
+    </table>
+
+</div>
+
+</html>

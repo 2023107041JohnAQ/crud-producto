@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{layout}">
+
+<div layout:fragment="contenido">
+
+    <h1>Movimientos de Inventario</h1>
+
+    <a th:href="@{/movimientos/nuevo}">
+        Nuevo Movimiento
+    </a>
+
+    <br><br>
+
+    <table>
+
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Tipo</th>
+            <th>Cantidad</th>
+            <th>Fecha</th>
+            <th>Observación</th>
+            <th>Acciones</th>
+        </tr>
+        </thead>
+
+        <tbody>
+
+        <tr th:each="movimiento : ${movimientos}">
+
+            <td th:text="${movimiento.id}"></td>
+            <td th:text="${movimiento.tipoMovimiento}"></td>
+            <td th:text="${movimiento.cantidad}"></td>
+            <td th:text="${movimiento.fecha}"></td>
+            <td th:text="${movimiento.observacion}"></td>
+
+            <td>
+
+                <a th:href="@{/movimientos/editar/{id}(id=${movimiento.id})}">
+                    Editar
+                </a>
+
+                |
+
+                <a th:href="@{/movimientos/eliminar/{id}(id=${movimiento.id})}"
+                   onclick="return confirm('¿Eliminar movimiento?')">
+                    Eliminar
+                </a>
+
+            </td>
+
+        </tr>
+
+        </tbody>
+
+    </table>
+
+</div>
+
+</html>

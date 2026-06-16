@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+
+  <title>Sistema de Almacén</title>
+
+  <link rel="stylesheet"
+        th:href="@{/css/estilos.css}">
+
+</head>
+
+<body>
+
+<div style="display:flex;">
+
+  <div style="
+        width:220px;
+        background:#f0f0f0;
+        padding:15px;
+        min-height:100vh;">
+
+    <div th:replace="fragments/menu :: menu"></div>
+
+  </div>
+
+  <div style="
+        flex:1;
+        padding:20px;">
+
+    <div layout:fragment="contenido">
+
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
